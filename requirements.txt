@@ -1,0 +1,16 @@
+PyMuPDF
+python-dotenv
+google-genai
+google-generativeai
+gradio
+
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+langchain-google-genai
+
+chromadb
+
+django
+markdown
