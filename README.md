@@ -136,38 +136,38 @@ Aguarde enquanto o sistema processa o PDF e gera a resposta. A resposta aparecer
 ## 📂 Estrutura do Projeto
 ```
 AskMyPdf/
-├── .venv/                     # Ambiente virtual
-├── AskMyPdf/                  # Diretório principal do projeto Django
+├── .venv/                          # Ambiente virtual
+├── AskMyPdf/                       # Diretório principal do projeto Django
 │   ├── __init__.py
 │   ├── asgi.py
-│   ├── settings.py            # Configurações do projeto
-│   ├── urls.py                # URLs principais do projeto
+│   ├── settings.py                 # Configurações do projeto
+│   ├── urls.py                     # URLs principais do projeto
 │   └── wsgi.py
-├── myapp/                     # Seu aplicativo Django
+├── myapp/                          # Seu aplicativo Django
 │   ├── migrations/
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── tests.py
-│   ├── views.py               # Lógica das views (frontend e API)
-│   ├── urls.py                # URLs do aplicativo
-│   ├── templates/             # Templates HTML (myapp/index.html)
+│   ├── views.py                    # Lógica das views (frontend e API)
+│   ├── urls.py                     # URLs do aplicativo
+│   ├── templates/                  # Templates HTML (myapp/index.html)
 │   │   └── myapp/
 │   │       └── index.html
-│   └── static/                # Arquivos estáticos (CSS, JS)
+│   └── static/                     # Arquivos estáticos (CSS, JS)
 │       └── myapp/
 │           └── script.js
 │           └── style.css
-│   └── src/                   # Módulos de lógica central
+│   └── src/                        # Módulos de lógica central
 │       ├── __init__.py
-│       ├── pdf_processor.py   # Extração de texto de PDF
-│       ├── text_splitter.py   # Divisão de texto em chunks
-│       ├── vectorstore.py     # Criação de vector store e embeddings
-│       └── Youtubeer.py # Lógica de perguntas e respostas com Gemini
-├── manage.py                  # Utilitário de linha de comando do Django
-├── requirements.txt           # Dependências do projeto
-├── .env                       # Variáveis de ambiente (sua chave API)
-├── .gitignore                 # Arquivos e diretórios a serem ignorados pelo Git
-└── README.md                  # Este arquivo
+│       ├── pdf_processor.py        # Extração de texto de PDF
+│       ├── text_splitter.py        # Divisão de texto em chunks
+│       ├── vectorstore.py          # Criação de vector store e embeddings
+│       └── Youtubeer.py            # Lógica de perguntas e respostas com Gemini
+├── manage.py                       # Utilitário de linha de comando do Django
+├── requirements.txt                # Dependências do projeto
+├── .env                            # Variáveis de ambiente (sua chave API)
+├── .gitignore                      # Arquivos e diretórios a serem ignorados pelo Git
+└── README.md                       # Este arquivo
 ```
