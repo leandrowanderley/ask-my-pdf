@@ -1,4 +1,45 @@
-.venv
-.venv/
-__pycache__/
-.env
+# Python
+.venv/                  
+env/                    
+venv/                   
+*.pyc                   
+__pycache__/            
+*.egg-info/             
+build/                  
+dist/                   
+.Python                 
+
+# Django específicos
+db.sqlite3              
+/media/                 
+/staticfiles/           
+*.log                   
+celerybeat-schedule     
+celerybeat.pid          
+*.pot                   
+
+# Variáveis de Ambiente
+.env                    
+
+# macOS
+.DS_Store               
+
+# Windows
+Thumbs.db               
+
+# Editores / IDEs
+.vscode/                
+.idea/                  
+*.sublime-project       
+*.sublime-workspace     
+.history/               
+*.swp                   
+*~                      
+
+# Testes
+.pytest_cache/          
+htmlcov/                
+.coverage               
+
+# Diversos
+.ipynb_checkpoints      
