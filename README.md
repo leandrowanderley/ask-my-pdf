@@ -57,7 +57,7 @@ git clone [https://www.google.com/search?q=https://github.com/LeandroWanderley/A
 cd AskMyPdf
 ```
 
-c 2. Create and Activate the Virtual Environment
+### 2. Create and Activate the Virtual Environment
 It is highly recommended to use a virtual environment to isolate project dependencies.
 
 ```bash
