@@ -2,86 +2,85 @@
 
 ---
 
-## 📚 Visão Geral do Projeto
+## 📚 Project Overview
 
-O **AskMyPDF** é uma aplicação web interativa desenvolvida com **Django** que permite aos usuários fazer upload de arquivos PDF e, em seguida, fazer perguntas sobre o conteúdo desses documentos. Utilizando o poder do **Google Gemini API** e de modelos de linguagem e embeddings, o sistema extrai informações do PDF, as processa e gera respostas relevantes para as perguntas dos usuários.
-
----
-
-## ✨ Funcionalidades
-
-* **Upload de PDF:** Interface intuitiva para upload de arquivos PDF.
-* **Extração de Texto:** Capacidade de extrair texto completo de documentos PDF.
-* **Processamento de Texto:** Divide o conteúdo do PDF em "chunks" gerenciáveis para otimizar o processamento.
-* **Criação de Vector Store:** Converte os chunks de texto em embeddings (vetores numéricos) e os armazena em um `vectorstore` (usando ChromaDB) para busca de similaridade semântica.
-* **Geração de Respostas com IA:** Utiliza o modelo Gemini do Google para responder a perguntas baseadas no conteúdo do PDF, fornecendo respostas concisas e informativas.
-* **Interface Amigável:** Frontend simples e responsivo para uma experiência de usuário agradável.
-* **Estilização de Saída:** Suporte para renderização de estilizações de texto (negrito, itálico, listas, etc.) nas respostas, caso o Gemini as forneça.
+**AskMyPDF** is an interactive web application built with **Django** that allows users to upload PDF files and then ask questions about the content of those documents. Using the power of the **Google Gemini API** and language models and embeddings, the system extracts information from the PDF, processes it, and generates relevant answers to the user's questions.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## ✨ Features
+
+* **PDF Upload:** Intuitive interface for uploading PDF files.
+* **Text Extraction:** Ability to extract full text from PDF documents.
+* **Text Processing:** Breaks PDF content into manageable chunks for faster processing. * **Vector Store Creation:** Converts text chunks into embeddings (numeric vectors) and stores them in a `vectorstore` (using ChromaDB) for semantic similarity searching.
+* **AI-Powered Answer Generation:** Uses Google's Gemini model to answer questions based on the PDF content, providing concise and informative answers.
+* **User-Friendly Interface:** Simple and responsive frontend for a pleasant user experience.
+* **Output Styling:** Support for rendering text styling (bold, italic, lists, etc.) in the answers, if Gemini provides them.
+
+---
+
+## 🛠️ Technologies Used
 
 * **Backend:**
-    * **Django:** Framework web Python para o desenvolvimento do servidor.
-    * **Python:** Linguagem de programação principal.
-    * **PyMuPDF (fitz):** Para extração de texto de PDFs.
-    * **Langchain:** Framework para desenvolvimento de aplicações com Large Language Models (LLMs).
-    * **Langchain-Google-GenAI:** Integração com o Google Gemini.
-    * **HuggingFaceEmbeddings:** Para gerar embeddings de texto (usando o modelo `all-MiniLM-L6-v2`).
-    * **ChromaDB:** Banco de dados vetorial para armazenar os embeddings.
-    * **Python-Markdown:** Para converter Markdown em HTML no backend.
-    * **python-dotenv:** Para gerenciamento de variáveis de ambiente.
+* **Django:** Python web framework for server development.
+* **Python:** Main programming language.
+* **PyMuPDF (fitz):** For extracting text from PDFs.
+* **Langchain:** Framework for developing applications with Large Language Models (LLMs).
+* **Langchain-Google-GenAI:** Integration with Google Gemini.
+* **HuggingFaceEmbeddings:** For generating text embeddings (using the `all-MiniLM-L6-v2` model).
+* **ChromaDB:** Vector database for storing the embeddings.
+* **Python-Markdown:** For converting Markdown to HTML in the backend.
+* **python-dotenv:** For managing environment variables.
 * **Frontend:**
-    * **HTML5:** Estrutura da página web.
-    * **CSS3:** Estilização da interface.
-    * **JavaScript:** Lógica de interação com o backend (requisições, exibição de respostas).
+* **HTML5:** Structure of the web page.
+* **CSS3:** Styling of the interface.
+* **JavaScript:** Logic for interacting with the backend (requests, displaying responses).
 
 ---
 
-## 🚀 Como Configurar e Executar o Projeto Localmente
+## 🚀 How to Set Up and Run the Project Locally
 
-Siga estas instruções para configurar e executar o **AskMyPDF** em sua máquina local.
+Follow these instructions to set up and run **AskMyPDF** on your local machine.
 
-### Pré-requisitos
+### Prerequisites
 
-* **Python 3.10 ou superior**
-* `pip` (gerenciador de pacotes do Python)
-* Conexão com a internet para baixar modelos e acessar a API do Gemini.
+* **Python 3.10 or higher**
+* `pip` (Python package manager)
+* Internet connection to download models and access the Gemini API.
 
-### 1. Clonar o Repositório
+### 1. Clone the Repository
 
-Primeiro, clone o repositório para o seu ambiente local:
+First, clone the repository to your local environment:
 
 ```bash
 git clone [https://www.google.com/search?q=https://github.com/LeandroWanderley/AskMyPdf.git](https://www.google.com/search?q=https://github.com/LeandroWanderley/AskMyPdf.git)
 cd AskMyPdf
 ```
 
-c 2. Criar e Ativar o Ambiente Virtual
-É altamente recomendado usar um ambiente virtual para isolar as dependências do projeto.
+c 2. Create and Activate the Virtual Environment
+It is highly recommended to use a virtual environment to isolate project dependencies.
 
 ```bash
 python -m venv .venv
 ```
 
-Ativar o ambiente virtual:
+Activate the virtual environment:
 
-No macOS/Linux:
+On macOS/Linux:
 ```Bash
 source .venv/bin/activate
 ```
-No Windows (Prompt de Comando):
+On Windows (Command Prompt):
 ```Bash
 .venv\Scripts\activate
 ```
-No Windows (PowerShell):
+On Windows (PowerShell):
 ```PowerShell
 .venv\Scripts\Activate.ps1
 ```
 
-### 3. Instalar as Dependências
-Crie um arquivo ```requirements.txt``` na raiz do seu projeto (`AskMyPdf/requirements.txt`) com o seguinte conteúdo:
+### 3. Install the Dependencies
+Create a ```requirements.txt``` file in the root of your project (`AskMyPdf/requirements.txt`) with the following content:
 
 ```
 Django
@@ -89,85 +88,85 @@ langchain
 langchain-google-genai
 langchain-community
 langchain-huggingface
-pymupdf # Instala fitz
+pymupdf # Install fitz
 markdown
 python-dotenv
 ```
-Após criar o arquivo, instale todas as dependências:
+After creating the file, install all dependencies:
 
 ```Bash
 pip install -r requirements.txt
 ```
 
-### 4. Configurar a Chave da API do Gemini
-Você precisará de uma chave da API do Google Gemini. Obtenha a sua em Google AI Studio.
+### 4. Set up the Gemini API Key
+You will need a Google Gemini API key. Get yours from Google AI Studio.
 
-Crie um arquivo chamado .env na raiz do seu projeto (AskMyPdf/.env) e adicione sua chave da API:
+Create a file called .env in the root of your project (AskMyPdf/.env) and add your API key:
 
 ```
-GEMINI_API_KEY="SUA_CHAVE_DA_API_DO_GEMINI_AQUI"
+GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
 ```
-Lembre-se: O arquivo `.env` já está listado no `.gitignore` para garantir que sua chave não seja enviada para o controle de versão.
+Remember: The `.env` file is already listed in `.gitignore` to ensure that your key is not committed to version control.
 
-### 5. Executar as Migrações do Banco de Dados
-Aplique as migrações iniciais do Django para configurar o banco de dados:
+### 5. Run the Database Migrations
+Apply the initial Django migrations to set up the database:
 
 ```Bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 6. Iniciar o Servidor de Desenvolvimento
-Agora você pode iniciar o servidor de desenvolvimento do Django:
+### 6. Start the Development Server
+Now you can start the Django development server:
 
 ```Bash
 python manage.py runserver
 ```
-Você verá uma mensagem indicando que o servidor está rodando, geralmente em `http://127.0.0.1:8000/`.
+You will see a message indicating that the server is running, usually at `http://127.0.0.1:8000/`.
 
-## 🌐 Utilização
-Abra seu navegador web e navegue para `http://127.0.0.1:8000/`.
-Você verá a interface do AskMyPDF.
-Clique no botão "Escolher Arquivo" para fazer upload de um documento PDF.
-No campo de texto, digite sua pergunta sobre o conteúdo do PDF.
-Clique no botão "Perguntar ao PDF".
-Aguarde enquanto o sistema processa o PDF e gera a resposta. A resposta aparecerá abaixo do formulário.
+## 🌐 Usage
+Open your web browser and navigate to `http://127.0.0.1:8000/`.
+You will see the AskMyPDF interface.
+Click the "Choose File" button to upload a PDF document.
+In the text field, type your question about the contents of the PDF.
+Click the "Ask PDF Question" button.
+Please wait while the system processes the PDF and generates the response. The response will appear below the form.
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 ```
 AskMyPdf/
-├── .venv/                          # Ambiente virtual
-├── AskMyPdf/                       # Diretório principal do projeto Django
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py                 # Configurações do projeto
-│   ├── urls.py                     # URLs principais do projeto
-│   └── wsgi.py
-├── myapp/                          # Seu aplicativo Django
-│   ├── migrations/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── views.py                    # Lógica das views (frontend e API)
-│   ├── urls.py                     # URLs do aplicativo
-│   ├── templates/                  # Templates HTML (myapp/index.html)
-│   │   └── myapp/
-│   │       └── index.html
-│   └── static/                     # Arquivos estáticos (CSS, JS)
-│       └── myapp/
-│           └── script.js
-│           └── style.css
-│   └── src/                        # Módulos de lógica central
-│       ├── __init__.py
-│       ├── pdf_processor.py        # Extração de texto de PDF
-│       ├── text_splitter.py        # Divisão de texto em chunks
-│       ├── vectorstore.py          # Criação de vector store e embeddings
-│       └── Youtubeer.py            # Lógica de perguntas e respostas com Gemini
-├── manage.py                       # Utilitário de linha de comando do Django
-├── requirements.txt                # Dependências do projeto
-├── .env                            # Variáveis de ambiente (sua chave API)
-├── .gitignore                      # Arquivos e diretórios a serem ignorados pelo Git
-└── README.md                       # Este arquivo
+├── .venv/                      # Virtual environment
+├── AskMyPdf/                   # Main Django project directory
+│ ├── __init__.py
+│ ├── asgi.py
+│ ├── settings.py               # Project settings
+│ ├── urls.py                   # Main project URLs
+│ └── wsgi.py
+├── myapp/                      # Your Django application
+│ ├── migrations/
+│ ├── __init__.py
+│ ├── admin.py
+│ ├── apps.py
+│ ├── models.py
+│ ├── tests.py
+│ ├── views.py                  # View logic (frontend and API)
+│ ├── urls.py                   # Application URLs
+│ ├── templates/                # HTML templates (myapp/index.html)
+│ │ └── myapp/
+│ │ └── index.html
+│ └── static/                   # Static files (CSS, JS)
+│ └── myapp/
+│ └── script.js
+│ └── style.css
+│ └── src/                      # Core logic modules
+│ ├── __init__.py
+│ ├── pdf_processor.py          # Extracting text from PDF
+│ ├── text_splitter.py          # Splitting text into chunks
+│ ├── vectorstore.py            # Creating vector store and embeddings
+│ └── Youtubeer.py              # Q&A logic with Gemini
+├── manage.py                   # Django command-line utility
+├── requirements.txt            # Project dependencies
+├── .env                        # Environment variables (your API key)
+├── .gitignore                  # Files and directories to be ignored by Git
+└── README.md                   # This file
 ```
